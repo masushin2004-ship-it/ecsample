@@ -4,11 +4,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class HomeController {
+public class ProductController {
 
-	@GetMapping("/")
-	public String home() {
-		//templates/home.html を表示する
-		return "home";
+	@GetMapping("/products")
+	public String showList() {
+		//商品一覧ぺージを作成する
+		return "product/list";
 	}
 }
