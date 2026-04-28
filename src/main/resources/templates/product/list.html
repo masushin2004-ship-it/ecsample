@@ -8,9 +8,11 @@
   <h1>商品一覧ページ</h1>
 
   <ul>
-    <li>サンプル商品A</li>
-    <li>サンプル商品B</li>
-    <li>サンプル商品C</li>
+    <li th:each="product : ${products}">
+		<a th:href="'/product/' + ${product.id}">
+		     [[${product.name}]]（[[${#numbers.formatDecimal(product.price, 0, 'COMMA', 0, 'POINT')}]]円）
+      </a>
+    </li>
   </ul>
 
   <a href="/">▶ トップページに戻る</a>
